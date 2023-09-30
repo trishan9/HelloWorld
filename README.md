@@ -1,6 +1,6 @@
 # Hello World !
 
-This repo is meant to contain <b>Hello World</b> programs in various programming languages and their installations
+This repo is meant to contain <b>Hello World</b> programs in various programming languages.
 
 #### Procedure to add programs:
 
