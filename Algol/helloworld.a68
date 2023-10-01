@@ -1,0 +1,3 @@
+# a hello world in algol 68 #
+[] CHAR str = "Hello, World!";
+print((str, newline))
