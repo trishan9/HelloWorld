@@ -20,7 +20,7 @@ Alternatively,
 
 
 # Follow Me
-To get quick approval of your pull request, (`Follow Me`)🚀
+To get quick approval of your pull requests, (`Follow Me`)🚀
 <tr>
   <td align="center">
     <a href="https://github.com/trishan9">
