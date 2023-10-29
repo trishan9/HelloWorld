@@ -10,4 +10,4 @@ def pal(num):
     else:
         return False
 
-print(pal(12111))
+print(pal(121))

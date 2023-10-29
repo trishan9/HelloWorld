@@ -4,5 +4,5 @@ def fact(num):
 
     return num * fact(num - 1)
 
-sol = fact(6)
+sol = fact(7)
 print(sol)
