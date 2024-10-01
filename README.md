@@ -4,14 +4,13 @@ This repo is meant to contain <b>Hello World</b> programs in various programming
 
 #### Procedure to add programs:
 
-Alternatively,
 - Fork the respective repository to your profile.
 - Clone the personal repo to your local machine: `git clone https://github.com/<username>/HelloWorld.git`
 (Before committing all files, check if all files are staged atleast. It can be checked using `git status`).
-- Make a new branch to make PR: `git checkout -b <branch_name>`
+- Make a new branch with your name to make PR: `git checkout -b <your_name-branch_name>`
 - Add your programs in correct locations: `git add .`. (Adds all files here)
-- Commit your changes: `git commit -m "Some_Random_Message"`. (Committed all files)
-- Finally, you just need to push all the changes by doing: `git push origin <branch_name>`. 
+- Commit your changes: `git commit -m "meaningful commit message"`. (Committed all files)
+- Finally, you just need to push all the changes by doing: `git push origin <your_name-branch_name>`. 
 
 ## Awesome contributors :star_struck:
 <a href="https://github.com/trishan9/HelloWorld/graphs/contributors">
