@@ -1,0 +1,43 @@
+<html>
+<head>
+<title> Simple Average Marks Calculator </title>
+</head>
+<body>
+Enter Your Marks (out of 100) - <br>
+Subject 1 <input type="number" id="sub1"><br>
+Subject 2 <input type="number" id="sub2"><br>
+Subject 3 <input type="number" id="sub3"><br>
+Subject 4 <input type="number" id="sub4"><br>
+Subject 5 <input type="number" id="sub5"><br>
+
+<button onclick=calculate()>Get Total,Average and Percentage of Marks</button>
+
+<p id="Total"></p>
+<p id="avg"></p>
+<p id="percentage"></p>
+
+
+<script>
+function calculate()
+
+{
+
+let sub1 = parseInt(document.getElementById('sub1').value);
+let sub2 = parseInt(document.getElementById('sub2').value);
+let sub3 = parseInt(document.getElementById('sub3').value);
+let sub4 = parseInt(document.getElementById('sub4').value);
+let sub5 = parseInt(document.getElementById('sub5').value);
+
+
+let Total = sub1+sub2+sub3+sub4+sub5;
+let avg = Total/5;
+let percentage = (Total/500)*100;
+
+document.getElementById('Total').innerText = "Total Marks: " + Total;
+document.getElementById('avg').innerText = "Average Marks: " + avg;
+document.getElementById('percentage').innerText = "Percentage: " + percentage;
+
+}
+</script>
+</body>
+</html>
