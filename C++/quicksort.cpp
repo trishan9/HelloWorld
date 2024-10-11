@@ -1,34 +1,30 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-
-
-int partition(vector<int> &arr, int low, int high){
-    int pivot = arr[low];
-    int i = low;
-    int j = high;
-    while(i < j){
-        while(arr[i] <= pivot && i<= high - 1){
+int partition(vector<int> &vec, int low, int high) {
+    int pivot = vec[high];
+    int i = (low - 1);
+    for (int j = low; j <= high - 1; j++) {
+        if (vec[j] <= pivot) {
             i++;
+            swap(vec[i], vec[j]);
         }
-        while(arr[j] <= pivot && j >= low + 1){
-            j--;
-        }
-        if(i<j) swap(arr[i], arr[j]);
     }
-    swap(arr[low], arr[j]);
-    return j;
+    swap(vec[i + 1], vec[high]);
+    return (i + 1);
 }
-
-void qs(vector<int> &arr, int low, int high){
-    if(low < high){
-        int pindex = partition(arr, low, high);
-        qs(arr, low, pindex - 1);
-        qs(arr, pindex + 1, high);
+void quickSort(vector<int> &vec, int low, int high) {
+    if (low < high) {
+        int pi = partition(vec, low, high);
+        quickSort(vec, low, pi - 1);
+        quickSort(vec, pi + 1, high);
     }
 }
-
-
-vector <int> quicksort(vector<int> arr){
-    qs(arr, 0, arr.size() - 1);
-    return arr;
+int main() {
+    vector<int> vec = {10, 7, 8, 9, 1, 5};
+    int n = vec.size();
+    quickSort(vec, 0, n - 1);
+    for (auto i : vec) {
+        cout << i << " ";
+    }
+    return 0;
 }
