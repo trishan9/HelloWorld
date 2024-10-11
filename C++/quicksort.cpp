@@ -1,34 +1,67 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
+class Solution
+{
+     public:
+    int partition(int arr[], int l, int r) {
+        int pivot = arr[r];  
+        int i = l;           // Place for swapping
 
-int partition(vector<int> &arr, int low, int high){
-    int pivot = arr[low];
-    int i = low;
-    int j = high;
-    while(i < j){
-        while(arr[i] <= pivot && i<= high - 1){
-            i++;
+        for (int j = l; j < r; j++) {
+            // If current element is smaller than or equal to pivot
+            if (arr[j] <= pivot) {
+                swap(arr[i], arr[j]);
+                i++; 
+            }
         }
-        while(arr[j] <= pivot && j >= low + 1){
-            j--;
+        swap(arr[i], arr[r]);  // Place pivot in the correct position
+        return i;              
+    }
+
+    // Function to find the Kth smallest element in the array using quickselect
+    int kthSmallest(int arr[], int n, int k) {
+        int l = 0, r = n - 1;
+        
+        
+        while (l <= r) {
+            // Partition the array and get the pivot index
+            int p = partition(arr, l, r);
+
+            // If pivot index matches Kth smallest element
+            if (p == k - 1) {
+                return arr[p];
+            }
+            // If pivot index is greater than Kth smallest, search left
+            else if (p > k - 1) {
+                r = p - 1;
+            }
+            // If pivot index is less than Kth smallest, search right
+            else {
+                l = p + 1;
+            }
         }
-        if(i<j) swap(arr[i], arr[j]);
+        return -1;  
     }
-    swap(arr[low], arr[j]);
-    return j;
-}
-
-void qs(vector<int> &arr, int low, int high){
-    if(low < high){
-        int pindex = partition(arr, low, high);
-        qs(arr, low, pindex - 1);
-        qs(arr, pindex + 1, high);
-    }
-}
+};
 
 
-vector <int> quicksort(vector<int> arr){
-    qs(arr, 0, arr.size() - 1);
-    return arr;
+int main(){
+	
+	int t;
+	cin >> t;
+	while(t--){
+	    
+	    int n, k;
+	    cin >> n >> k;
+	    int arr[n];
+	    
+	    for(int i = 0; i<n; ++i)
+	        cin>>arr[i];
+	        
+	    Solution ob;
+	    cout << ob.kthSmallest(arr, n, k) << endl;
+	    
+	}
+	return 0;
 }
