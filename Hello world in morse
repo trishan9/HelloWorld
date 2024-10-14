@@ -1,0 +1,22 @@
+"Hello World" in Morse code is:
+
+```
+.... . .-.. .-.. --- / .-- --- .-. .-.. -..
+```
+
+Breaking it down:
+- **H**: `....`
+- **E**: `.`
+- **L**: `.-..`
+- **L**: `.-..`
+- **O**: `---`
+
+(space between words)
+
+- **W**: `.--`
+- **O**: `---`
+- **R**: `.-.`
+- **L**: `.-..`
+- **D**: `-..`
+
+The `/` represents the space between "Hello" and "World".
