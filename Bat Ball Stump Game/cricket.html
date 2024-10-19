@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="cricket.css">
+  <title>Cricket Game</title>
+</head>
+
+<body>
+  <h1>Bat Ball Stump Game</h1>
+  <button onclick="
+    let computerChoice = generateComputerChoice();
+    let resultMsg = getResult('Bat',computerChoice);
+    showResult('Bat',computerChoice,resultMsg);
+  ">Bat</button>
+
+  <button onclick="
+   computerChoice = generateComputerChoice();
+   resultMsg = getResult('Ball',computerChoice);
+   showResult('Ball',computerChoice,resultMsg);
+  ">Ball</button>
+
+  <button onclick=" 
+   computerChoice = generateComputerChoice();
+   resultMsg = getResult('Stump',computerChoice);
+   showResult('Stump',computerChoice,resultMsg);
+  
+  ">Stump</button>
+</body>
+
+<script>
+  function generateComputerChoice() {
+    let randomNumber = Math.random() * 3;
+
+    if (randomNumber > 0 && randomNumber <= 1) {
+      return 'Bat';
+      //console.log('Computer choice is bat');
+    } else if (randomNumber > 1 && randomNumber <= 2) {
+      return 'Ball';
+      //console.log('Computer choice is ball');
+    } else {
+      return 'Stump';
+      //console.log('Computer choice is stump');
+    }
+  }
+
+  function getResult(userMove, computerMove) {
+    if (userMove === 'Bat') {
+      if (computerMove === 'Ball') {
+        return `User Won`;
+      } else if (computerMove === 'Bat') {
+        return `It's a Tie`;
+      } else {
+        return `Computer Won`;
+      }
+    } else if (userMove === 'Ball') {
+      if (computerMove === 'Ball') {
+        return `It's a Tie`;
+      } else if (computerMove === 'Bat') {
+        return `Computer Won`;
+      } else {
+        return 'User Won';
+      }
+    } else {
+      if (computerMove === 'Ball') {
+        return `Computer Won`;
+      } else if (computerMove === 'Bat') {
+        return `User Won`;
+      } else {
+        return `It's a Tie`;
+      }
+    }
+  }
+
+  function showResult(userMove, computerMove, result) {
+    alert(`You have chosen ${userMove}. Computer choice is ${computerMove} and ${result}`);
+  }
+</script>
+
+</html>
