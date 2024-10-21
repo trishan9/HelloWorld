@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bat Ball Stump Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .choices {
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        #result, #computer-choice {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bat Ball Stump Game</h1>
+        <div class="choices">
+            <button onclick="playGame('bat')">Bat</button>
+            <button onclick="playGame('ball')">Ball</button>
+            <button onclick="playGame('stump')">Stump</button>
+        </div>
+        <div class="result">
+            <p id="result"></p>
+            <p id="computer-choice"></p>
+        </div>
+    </div>
+
+    <script>
+        function playGame(userChoice) {
+            const choices = ['bat', 'ball', 'stump'];
+            
+            // Random computer choice
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+            let result = "";
+
+            if (userChoice === computerChoice) {
+                result = "It's a draw!";
+            } else if ((userChoice === 'bat' && computerChoice === 'ball') || 
+                    (userChoice === 'ball' && computerChoice === 'stump') || 
+                    (userChoice === 'stump' && computerChoice === 'bat')) {
+                result = "You win!";
+            } else {
+                result = "Computer wins!";
+            }
+
+            // Display result
+            document.getElementById('result').textContent = result;
+            document.getElementById('computer-choice').textContent = `Computer chose: ${computerChoice}`;
+        }
+    </script>
+</body>
+</html>
